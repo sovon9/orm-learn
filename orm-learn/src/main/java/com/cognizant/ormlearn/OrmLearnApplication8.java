@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
 import com.cognizant.ormlearn.model.Country;
-import com.cognizant.ormlearn.service.CountryService;
 import com.cognizant.ormlearn.service.CountryService_QueryMethods;
 import com.cognizant.ormlearn.service.exception.CountryNotFoundException;
+
 /**
  * 
  * testing query methods findByNameLike
@@ -26,17 +26,17 @@ public class OrmLearnApplication8 {
 
 	private static void testDeleteCountry() {
 
-		Country country=null;
-		List<Country> countries=null;
-		String alphabet="Z";	
+		Country country = null;
+		List<Country> countries = null;
+		String alphabet = "Z";
 		LOGGER.info("Start");
-		try {		
+		try {
 			countries = countryService.findByCodeNameStartingWith(alphabet);
 		} catch (CountryNotFoundException e) {
-			LOGGER.info("The Country with starting with "+alphabet);
+			LOGGER.info("The Country with starting with " + alphabet);
 		}
-		countries.forEach(c-> LOGGER.info(c.getCode()+" "+c.getName()));
-		//LOGGER.debug("countries={}", countries);
+		countries.forEach(c -> LOGGER.info(c.getCode() + " " + c.getName()));
+		// LOGGER.debug("countries={}", countries);
 		LOGGER.info("End");
 
 	}
