@@ -30,6 +30,9 @@ public class OrmLearnApplication12 {
 
     private static EmployeeServiceHQL employeeServiceHQL;
 
+	/**
+	 *   get all the employees who are permanent
+	 */
 	public static void testGetAllPermanentEmployees() {
 
 		LOGGER.info("Start");
